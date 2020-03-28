@@ -8,13 +8,22 @@ import Execptions.DivisionParZeroException;
 import Execptions.OperandeManquantException;
 import Execptions.OperandeTropGrandException;
 import Execptions.OperandeTropPetitException;
-
+/**
+ * 
+ * @author yasmine
+ *
+ */
 public class MoteurRPN extends Interpreteur {
 	public final double MAX_VALUE = 7000000;
 	public final double MIN_VALUE = 0;
 	private Stack<Double> stockage ;
 	private Stack<Double> historique ;
 	private Map<String , SpecifiqueCommande> commandes ;
+	/**
+	 * 
+	 * @param stockage
+	 * @param historique
+	 */
 	public MoteurRPN(final Stack<Double> stockage,final Stack<Double> historique) {
 		super(stockage, historique);
 		this.commandes = new HashMap<String,SpecifiqueCommande>();
@@ -26,7 +35,13 @@ public class MoteurRPN extends Interpreteur {
         this.historique=historique;
 		
 	}
-	
+	/**
+	 * 
+	 * @param operande
+	 * @throws OperandeTropGrandException
+	 * @throws OperandeTropPetitException
+	 * fonction pour ajouter un operand dans la pile stockage
+	 */
 	public void AjouterOperande(double operande) throws OperandeTropGrandException , OperandeTropPetitException
 	{
        if(operande < MIN_VALUE) {
@@ -38,6 +53,10 @@ public class MoteurRPN extends Interpreteur {
        this.stockage.push(operande);
 
 	}
+	/**
+	 * 
+	 * @return l'affichage de la pile 
+	 */
 	public String afficher()
 	{
 		String i = "";
@@ -47,7 +66,12 @@ public class MoteurRPN extends Interpreteur {
 		}
 		return i;
 	}
-	
+	/**
+	 * 
+	 * @author yasmine
+	 * classe addition pour effectuer l'operation d'addition
+	 *
+	 */
 	private class Addition implements SpecifiqueCommande{
         public Addition(){
         }
@@ -58,6 +82,11 @@ public class MoteurRPN extends Interpreteur {
 
 		
 	}
+	/**
+	 * 
+	 * @author yasmine
+	 *classe multiplication pour effectuer l'operation de multiplication
+	 */
 	private class Multiplication implements SpecifiqueCommande{
          public Multiplication(){
          }
@@ -67,6 +96,12 @@ public class MoteurRPN extends Interpreteur {
 		}
 		
 			}
+/**
+ * 
+ * @author yasmine
+ * classe division pour effectuer l'operation de division
+ *
+ */
 	private class Division implements SpecifiqueCommande {
         public Division(Stack<Double> stosckage){
         }
@@ -85,6 +120,13 @@ public class MoteurRPN extends Interpreteur {
 		}
 		
 			}
+	/**
+	 * 
+	 * @author yasmine
+	 * 
+	 * classe soustraction  pour effectuer l'operation soustraction
+	 *
+	 */
 	private class Soustraction implements SpecifiqueCommande{
         public Soustraction(){
         }
@@ -96,6 +138,13 @@ public class MoteurRPN extends Interpreteur {
 		
 		
 			}
+	/**
+	 * 
+	 * @param comd
+	 * @return resultat d execution de la commande 
+	 * @throws OperandeManquantException
+	 * @throws DivisionParZeroException
+	 */
 
 	public double calcule(SpecifiqueCommande comd) throws OperandeManquantException, DivisionParZeroException
 	{
@@ -111,6 +160,13 @@ public class MoteurRPN extends Interpreteur {
 				
 			} else throw new OperandeManquantException();
 	}
+	/**
+	 * 
+	 * @param operation
+	 * @return  la commande comd qui va definir le type de la commande 
+	 * @throws OperandeManquantException
+	 * @throws DivisionParZeroException
+	 */
       public double Calculecommande(String operation) throws OperandeManquantException, DivisionParZeroException {
 		
 		 return  this.calcule(this.commandes.get(operation));
