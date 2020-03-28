@@ -3,11 +3,13 @@ package Execptions;
 public class DivisionParZeroException extends Exception  {
 	
 	
-	private static final long serialVersionUID = -9154690906821473044L;
 	
+	/**
+	 * Exception  Division Par Zero
+	 */
 
 	public DivisionParZeroException(){
-		super ("Impossible de diviser par zéro ");
+		super ("Impossible de diviser par zero ");
 	}
 
 }
