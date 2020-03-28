@@ -10,9 +10,15 @@ import Execptions.OperandeTropPetitException;
 
 
 public class SaisieRPN {
+	/**
+	 * 
+	 */
 	private Stack<Double> stockage ;
 	private Stack<Double>historique ;
 	private MoteurRPN mon_moteurrpn;
+	/**
+	 * 
+	 */
 	public SaisieRPN()
 	{
 		this.historique= new Stack<Double>() ;
@@ -20,7 +26,16 @@ public class SaisieRPN {
 		this.mon_moteurrpn = new MoteurRPN(stockage,historique);
 		
 	}
-	public void manipulation() throws OperandeTropGrandException, OperandeTropPetitException, OperandeManquantException, DivisionParZeroException
+	/**
+	 * 
+	 * @throws OperandeTropGrandException
+	 * @throws OperandeTropPetitException
+	 * @throws OperandeManquantException
+	 * @throws DivisionParZeroException
+	 * 
+	 * 
+	 */
+	public void traitement() throws OperandeTropGrandException, OperandeTropPetitException, OperandeManquantException, DivisionParZeroException
 	{
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Entrez une operande ou exit pour quitter le programme ou undo pour retour en arrière ");
