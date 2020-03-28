@@ -1,21 +1,18 @@
 package fr.uvsq.exo4;
 
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 import java.util.Stack;
 
 import org.junit.Test;
-import static org.junit.Assert.assertArrayEquals;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+
 import Execptions.DivisionParZeroException;
 import Execptions.OperandeManquantException;
 import Execptions.OperandeTropGrandException;
 import Execptions.OperandeTropPetitException;
 
 
-public class MoteurRPNtest {
+public class MoteurRPNTest {
 	private Stack<Double> s = new Stack<Double>();
 	private Stack<Double> h = new Stack<Double>();
 	MoteurRPN m = new MoteurRPN(s,h);
