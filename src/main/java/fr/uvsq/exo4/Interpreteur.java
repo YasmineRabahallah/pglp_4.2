@@ -5,22 +5,41 @@ import java.util.Map;
 import java.util.Stack;
 
 import Execptions.OperandeManquantException;
-
+/**
+ * 
+ * @author yasmine
+ *
+ */
 public class Interpreteur {
 private Map<String , GeneriqueCommande> commandes ;
 
-
+/**
+ * 
+ * @param stockage
+ * @param historique
+ */
 public Interpreteur ( final  Stack<Double> stockage , final  Stack<Double> historique )
 {
 	this.commandes = new HashMap <String , GeneriqueCommande> ();
 	this.commandes.put("undo", new Undo(stockage, historique));
 	this.commandes.put("exit", new Quit());
 }
+/**
+ * 
+ * @param value
+ * @throws OperandeManquantException
+ * fonction qui permet de returner la commande et l'executer
+ */
 public void traite(String value) throws OperandeManquantException {
 	GeneriqueCommande commande = this.commandes.get(value);
     commande.apply();
 	
 }
+/**
+ * 
+ * @author yasmine
+ *classe quitter 
+ */
      private class Quit implements GeneriqueCommande {
 
 		public void apply() {
@@ -28,7 +47,11 @@ public void traite(String value) throws OperandeManquantException {
 			
 		}
      }
-     
+    /**
+     *  
+     * @author yasmine 
+     *class pour retour en arriere et avoir le dernier historique
+     */
 	private class Undo implements GeneriqueCommande {
           private Stack<Double> stockage;
           private Stack<Double>  hist;
@@ -37,6 +60,9 @@ public void traite(String value) throws OperandeManquantException {
 			this.stockage=stockage;
 			
 		}
+		/**
+		 * 
+		 */
 		public void apply() throws OperandeManquantException{
                if (!this.stockage.empty()){
             	   this.stockage.pop();
