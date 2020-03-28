@@ -29,6 +29,12 @@ public class MoteurRPNtest {
 	public void testOperandeTropPetit() throws DivisionParZeroException, OperandeTropGrandException, OperandeTropPetitException, OperandeManquantException{
 		m.AjouterOperande(-10.00);
 		}
+	@Test(expected=DivisionParZeroException.class)
+	public void testDivisionParZeroException() throws DivisionParZeroException, OperandeTropGrandException, OperandeTropPetitException, OperandeManquantException{
+		m.AjouterOperande(7.0);
+		m.AjouterOperande(0.0);
+		m.Calculecommande("/");
+		}
 	@Test(expected=OperandeTropGrandException.class)
 	public void testOperandeTropGrand() throws DivisionParZeroException, OperandeTropGrandException, OperandeTropPetitException, OperandeManquantException{
 		
