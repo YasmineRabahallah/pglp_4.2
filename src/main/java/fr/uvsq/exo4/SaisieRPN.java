@@ -1,0 +1,89 @@
+package fr.uvsq.exo4;
+
+import java.util.Scanner;
+import java.util.Stack;
+
+import Execptions.DivisionParZeroException;
+import Execptions.OperandeManquantException;
+import Execptions.OperandeTropGrandException;
+import Execptions.OperandeTropPetitException;
+
+
+public class SaisieRPN {
+	private Stack<Double> stockage ;
+	private Stack<Double>historique ;
+	private MoteurRPN mon_moteurrpn;
+	public SaisieRPN()
+	{
+		this.historique= new Stack<Double>() ;
+		this.stockage = new Stack<Double>();
+		this.mon_moteurrpn = new MoteurRPN(stockage,historique);
+		
+	}
+	public void manipulation() throws OperandeTropGrandException, OperandeTropPetitException, OperandeManquantException, DivisionParZeroException
+	{
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Entrez une operande ou exit pour quitter le programme ou undo pour retour en arrière ");
+		String saisie = sc.nextLine();
+		Double d;
+		while (true)
+		{ 
+			if (saisie.equals("undo")|| saisie.equals("exit")){
+				mon_moteurrpn.traite(saisie);
+				
+				
+				
+				if( saisie.equals("exit"))
+				{
+					 System.exit(0) ;
+				}else
+				{
+					System.out.println(mon_moteurrpn.afficher());
+					saisie = sc.nextLine();
+				}
+			
+			 
+		     }
+			
+			else{
+			
+			try 
+			{
+				if(saisie.equals("+")|| saisie.equals("-")|| saisie.equals("*")|| saisie.equals("/"))
+				{
+					mon_moteurrpn.Calculecommande(saisie);
+				
+				}
+				
+				
+				else
+				{
+					d = new Double(saisie);
+					mon_moteurrpn.AjouterOperande(d);
+				}
+				
+			}
+			
+			catch(OperandeManquantException | DivisionParZeroException | OperandeTropPetitException | OperandeTropGrandException e)
+			{
+				System.out.println(e.getMessage());
+			}
+			catch(NumberFormatException e)
+			{
+				System.out.println("saisie incorrecte (Entrez une operande ou exit pour quitter le programme  ou undo pour retour en arrière )");
+			}
+			finally {
+				System.out.println(mon_moteurrpn.afficher());
+				saisie = sc.nextLine();
+			}
+			}
+						
+		}
+		
+			
+				
+		
+		
+		
+	}
+}
