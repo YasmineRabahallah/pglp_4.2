@@ -4,23 +4,39 @@ import Execptions.DivisionParZeroException;
 import Execptions.OperandeManquantException;
 import Execptions.OperandeTropGrandException;
 import Execptions.OperandeTropPetitException;
-
+/**
+ * 
+ * @author yasmine
+ *
+ */
 public enum CalculatriceRPN {
+	/**
+	 * 
+	 */
 CALCULATRICE(new SaisieRPN());
-	
+	/**
+	 * 
+	 */
 	private SaisieRPN saisierpn;
 	
 	CalculatriceRPN( SaisieRPN saisie)
 	{
 		 saisierpn= saisie ;
 	}
-	public void traitement() throws OperandeTropGrandException, OperandeTropPetitException, OperandeManquantException, DivisionParZeroException
+	/**
+	 * 
+	 * @throws OperandeTropGrandException
+	 * @throws OperandeTropPetitException
+	 * @throws OperandeManquantException
+	 * @throws DivisionParZeroException
+	 */
+	public void traite() throws OperandeTropGrandException, OperandeTropPetitException, OperandeManquantException, DivisionParZeroException
 	{
-		saisierpn.manipulation();
+		saisierpn.traitement();
 	}
 	
 	public static void main(String[] args) throws OperandeTropGrandException, OperandeTropPetitException, OperandeManquantException, DivisionParZeroException {
 		
-		CalculatriceRPN.CALCULATRICE.traitement();
+		CalculatriceRPN.CALCULATRICE.traite();
 	}
 }
