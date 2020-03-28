@@ -13,13 +13,14 @@ import Execptions.OperandeManquantException;
 
 
 public class Test_interpreteur {
-	
+	Stack<Double> s ;
+	Stack<Double> h ;
+	Interpreteur in = new Interpreteur(s,h);
 		@Test
 		public void testinterpreteur1() {
-			Stack<Double> s = null;
-			Stack<Double> h = null;
-			Interpreteur in = new Interpreteur(s,h);
+			
 			assertNotNull(in);
 		}
+		
 		
 }
