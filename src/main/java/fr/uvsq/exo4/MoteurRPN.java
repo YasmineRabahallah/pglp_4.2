@@ -21,8 +21,8 @@ public class MoteurRPN extends Interpreteur {
 	private Map<String , SpecifiqueCommande> commandes ;
 	/**
 	 * 
-	 * @param stockage
-	 * @param historique
+	 * @param stockage pile de stockage 
+	 * @param historique pile d'historique
 	 */
 	public MoteurRPN(final Stack<Double> stockage,final Stack<Double> historique) {
 		super(stockage, historique);
@@ -37,9 +37,11 @@ public class MoteurRPN extends Interpreteur {
 	}
 	/**
 	 * 
-	 * @param operande
-	 * @throws OperandeTropGrandException
-	 * @throws OperandeTropPetitException
+	 * @param operande  operande
+	 * 
+	 * 
+	 * @throws OperandeTropGrandException OperandeTropGrandException
+	 * @throws OperandeTropPetitException OperandeTropPetitException
 	 * fonction pour ajouter un operand dans la pile stockage
 	 */
 	public void AjouterOperande(double operande) throws OperandeTropGrandException , OperandeTropPetitException
@@ -140,10 +142,10 @@ public class MoteurRPN extends Interpreteur {
 			}
 	/**
 	 * 
-	 * @param comd
+	 * @param comd la commande 
 	 * @return resultat d execution de la commande 
-	 * @throws OperandeManquantException
-	 * @throws DivisionParZeroException
+	 * @throws OperandeManquantException OperandeManquantException
+	 * @throws DivisionParZeroException  DivisionParZeroException
 	 */
 
 	public double calcule(SpecifiqueCommande comd) throws OperandeManquantException, DivisionParZeroException
@@ -162,10 +164,10 @@ public class MoteurRPN extends Interpreteur {
 	}
 	/**
 	 * 
-	 * @param operation
+	 * @param operation qui vas défnir la commande
 	 * @return  la commande comd qui va definir le type de la commande 
-	 * @throws OperandeManquantException
-	 * @throws DivisionParZeroException
+	 * @throws OperandeManquantException OperandeManquantException
+	 * @throws DivisionParZeroException DivisionParZeroException
 	 */
       public double Calculecommande(String operation) throws OperandeManquantException, DivisionParZeroException {
 		

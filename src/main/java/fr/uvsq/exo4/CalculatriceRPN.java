@@ -25,10 +25,10 @@ CALCULATRICE(new SaisieRPN());
 	}
 	/**
 	 * 
-	 * @throws OperandeTropGrandException
-	 * @throws OperandeTropPetitException
-	 * @throws OperandeManquantException
-	 * @throws DivisionParZeroException
+	 * @throws OperandeTropGrandException OperandeTropGrandException
+	 * @throws OperandeTropPetitException OperandeTropPetitException
+	 * @throws OperandeManquantException OperandeManquantException
+	 * @throws DivisionParZeroException DivisionParZeroException
 	 */
 	public void traite() throws OperandeTropGrandException, OperandeTropPetitException, OperandeManquantException, DivisionParZeroException
 	{

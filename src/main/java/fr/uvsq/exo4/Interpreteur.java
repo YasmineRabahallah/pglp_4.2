@@ -15,8 +15,8 @@ private Map<String , GeneriqueCommande> commandes ;
 
 /**
  * 
- * @param stockage
- * @param historique
+ * @param stockage pile de stockage 
+ * @param historique pile d'historique
  */
 public Interpreteur ( final  Stack<Double> stockage , final  Stack<Double> historique )
 {
@@ -26,12 +26,12 @@ public Interpreteur ( final  Stack<Double> stockage , final  Stack<Double> histo
 }
 /**
  * 
- * @param value
+ * @param str pour definir la commande undo ou quit 
  * @throws OperandeManquantException
  * fonction qui permet de returner la commande et l'executer
  */
-public void traite(String value) throws OperandeManquantException {
-	GeneriqueCommande commande = this.commandes.get(value);
+public void traite(String str) throws OperandeManquantException {
+	GeneriqueCommande commande = this.commandes.get(str);
     commande.apply();
 	
 }
