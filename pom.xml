@@ -8,10 +8,8 @@
   <packaging>jar</packaging>
 
   <name>exo4.2</name>
-<url>http://maven.apache.org</url>
-
-
-    <reporting>
+ <url>http://maven.apache.org</url>
+<reporting>
         <plugins>
             <plugin>
                <groupId>org.apache.maven.plugins</groupId>
@@ -22,17 +20,24 @@
             <reportOutputDirectory>${project.reporting.outputDirectory}/javadoc</reportOutputDirectory>
         </configuration>
             </plugin>
-           
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
             	<artifactId>findbugs-maven-plugin</artifactId>
             	<version>3.0.4</version>
             </plugin>
                  <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-checkstyle-plugin</artifactId>
-          <version>3.1.0</version>
-          </plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-checkstyle-plugin</artifactId>
+        <version>3.1.1</version>
+        <configuration>
+          <configLocation>checkstyle.xml</configLocation>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>com.github.spotbugs</groupId>
+        <artifactId>spotbugs-maven-plugin</artifactId>
+        <version>4.0.0</version>
+      </plugin>
         </plugins>
     </reporting>
     <properties>
@@ -48,6 +53,11 @@
             <version>4.11</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+             <groupId>com.github.stefanbirkner</groupId>
+             <artifactId>system-rules</artifactId>
+             <version>1.3.0</version>
+        </dependency>
     </dependencies>
     <build>
         <plugins>
@@ -56,9 +66,20 @@
                 <artifactId>maven-site-plugin</artifactId>
                 <version>3.7.1</version>
             </plugin>
-        </plugins>
-        
-
-    </build>
+            <plugin>
+    <groupId>org.codehaus.mojo</groupId>
+    <artifactId>exec-maven-plugin</artifactId>
+    <version>1.2.1</version>
+    <executions>
+        <execution>
+           <goals>
+            <goal>java</goal>
+           </goals>
+        </execution>
+    </executions>
+   
+</plugin>
+      
+</plugins>
+ </build>
 </project>
-  

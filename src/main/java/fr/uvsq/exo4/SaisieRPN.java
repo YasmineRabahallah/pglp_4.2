@@ -67,7 +67,7 @@ public class SaisieRPN {
 			{
 				if(saisie.equals("+")|| saisie.equals("-")|| saisie.equals("*")|| saisie.equals("/"))
 				{
-					mon_moteurrpn.Calculecommande(saisie);
+					mon_moteurrpn.calculecommande(saisie);
 				
 				}
 				
@@ -75,7 +75,7 @@ public class SaisieRPN {
 				else
 				{
 					d = new Double(saisie);
-					mon_moteurrpn.AjouterOperande(d);
+					mon_moteurrpn.ajouterOperande(d);
 				}
 				
 			}

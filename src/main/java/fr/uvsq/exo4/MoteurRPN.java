@@ -14,8 +14,8 @@ import Execptions.OperandeTropPetitException;
  *
  */
 public class MoteurRPN extends Interpreteur {
-	public final double MAX_VALUE = 7000000;
-	public final double MIN_VALUE = 0;
+	public static  final double MAX_VALUE = 7000000;
+	public  static final double MIN_VALUE = 0;
 	private Stack<Double> stockage ;
 	private Stack<Double> historique ;
 	private Map<String , SpecifiqueCommande> commandes ;
@@ -44,7 +44,7 @@ public class MoteurRPN extends Interpreteur {
 	 * @throws OperandeTropPetitException OperandeTropPetitException
 	 * fonction pour ajouter un operand dans la pile stockage
 	 */
-	public void AjouterOperande(double operande) throws OperandeTropGrandException , OperandeTropPetitException
+	public void ajouterOperande(double operande) throws OperandeTropGrandException , OperandeTropPetitException
 	{
        if(operande < MIN_VALUE) {
     	   throw new OperandeTropPetitException() ;
@@ -62,9 +62,10 @@ public class MoteurRPN extends Interpreteur {
 	public String afficher()
 	{
 		String i = "";
+		String j=" " ;
 		for(double p :stockage)
 		{
-			i += p + " ";
+			i += p + j;
 		}
 		return i;
 	}
@@ -74,7 +75,7 @@ public class MoteurRPN extends Interpreteur {
 	 * classe addition pour effectuer l'operation d'addition
 	 *
 	 */
-	private class Addition implements SpecifiqueCommande{
+	private static class Addition implements SpecifiqueCommande{
         public Addition(){
         }
 		public double apply(double operande_1, double operande_2) {
@@ -89,7 +90,7 @@ public class MoteurRPN extends Interpreteur {
 	 * @author yasmine
 	 *classe multiplication pour effectuer l'operation de multiplication
 	 */
-	private class Multiplication implements SpecifiqueCommande{
+	private static class Multiplication implements SpecifiqueCommande{
          public Multiplication(){
          }
 		public double apply(double operande_1, double operande_2) {
@@ -129,7 +130,7 @@ public class MoteurRPN extends Interpreteur {
 	 * classe soustraction  pour effectuer l'operation soustraction
 	 *
 	 */
-	private class Soustraction implements SpecifiqueCommande{
+	private static  class Soustraction implements SpecifiqueCommande{
         public Soustraction(){
         }
 		public double apply(double operande_1, double operande_2) {
@@ -169,7 +170,7 @@ public class MoteurRPN extends Interpreteur {
 	 * @throws OperandeManquantException OperandeManquantException
 	 * @throws DivisionParZeroException DivisionParZeroException
 	 */
-      public double Calculecommande(String operation) throws OperandeManquantException, DivisionParZeroException {
+      public double calculecommande(String operation) throws OperandeManquantException, DivisionParZeroException {
 		
 		 return  this.calcule(this.commandes.get(operation));
 	}

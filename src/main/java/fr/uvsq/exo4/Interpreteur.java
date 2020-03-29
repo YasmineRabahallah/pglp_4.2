@@ -40,7 +40,7 @@ public void traite(String str) throws OperandeManquantException {
  * @author yasmine
  *classe quitter 
  */
-     private class Quit implements GeneriqueCommande {
+     private  static class Quit implements GeneriqueCommande {
 
 		public void apply() {
 			System.out.println("vous avez quitter !!!! ");
@@ -52,7 +52,7 @@ public void traite(String str) throws OperandeManquantException {
      * @author yasmine 
      *class pour retour en arriere et avoir le dernier historique
      */
-	private class Undo implements GeneriqueCommande {
+	private static class Undo implements GeneriqueCommande {
           private Stack<Double> stockage;
           private Stack<Double>  hist;
 		public Undo(final Stack<Double>  stockage ,final Stack<Double> hist) {
