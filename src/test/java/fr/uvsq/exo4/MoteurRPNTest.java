@@ -15,7 +15,7 @@ import execptions.OperandeTropPetitException;
 public class MoteurRPNTest {
 	private Stack<Double> s = new Stack<Double>();
 	private Stack<Double> h = new Stack<Double>();
-	MoteurRPN m = new MoteurRPN(s,h);
+	MoteurRpn m = new MoteurRpn(s,h);
 	@Test
 	public void testinterpreteur1() {
 		

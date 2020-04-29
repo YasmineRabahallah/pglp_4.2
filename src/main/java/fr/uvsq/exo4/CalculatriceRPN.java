@@ -12,15 +12,15 @@ import execptions.OperandeTropPetitException;
  */
 
 public enum CalculatriceRpn {
-  CALCULATRICE(new SaisieRPN());
+  CALCULATRICE(new SaisieRpn());
 
   /**
    * saisierpn.
    */
 
-  private SaisieRPN saisierpn;
+  private SaisieRpn saisierpn;
 
-  CalculatriceRpn(SaisieRPN saisie) {
+  CalculatriceRpn(SaisieRpn saisie) {
     saisierpn = saisie;
   }
 
