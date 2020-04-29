@@ -2,7 +2,18 @@ package fr.uvsq.exo4;
 
 import execptions.OperandeManquantException;
 
+/**
+ * interface GeneriqueCommande.
+ * @author rabahallah yasmine.
+ *
+ */
+
 public interface GeneriqueCommande extends Icommande  {
-	 public void apply() throws OperandeManquantException;
-	
+
+  /**
+   * appliquer la commande genirique.
+   */
+
+  public void apply() throws OperandeManquantException;
+
 }
