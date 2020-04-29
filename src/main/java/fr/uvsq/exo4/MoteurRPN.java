@@ -61,13 +61,12 @@ public class MoteurRPN extends Interpreteur {
 	 */
 	public String afficher()
 	{
-		String i = "";
-		String j=" " ;
-		for(double p :stockage)
-		{
-			i += p + j;
+		StringBuffer sb = new StringBuffer();
+		for(double p :stockage){
+			sb.append(" ");
+			sb.append(p);
 		}
-		return i;
+		return ""+sb;
 	}
 	/**
 	 * 

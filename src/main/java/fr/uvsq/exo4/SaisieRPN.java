@@ -38,7 +38,7 @@ public class SaisieRPN {
 	 */
 	public void traitement() throws OperandeTropGrandException, OperandeTropPetitException, OperandeManquantException, DivisionParZeroException
 	{
-		Scanner sc = new Scanner(System.in);
+		Scanner sc = new Scanner(System.in,"UTF8");
 		System.out.println("Entrez une operande ou exit pour quitter le programme ou undo pour retour en arrière ");
 		String saisie = sc.nextLine();
 		Double d;
