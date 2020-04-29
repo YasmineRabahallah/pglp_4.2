@@ -6,10 +6,10 @@ import java.util.Stack;
 
 import org.junit.Test;
 
-import Execptions.DivisionParZeroException;
-import Execptions.OperandeManquantException;
-import Execptions.OperandeTropGrandException;
-import Execptions.OperandeTropPetitException;
+import execptions.DivisionParZeroException;
+import execptions.OperandeManquantException;
+import execptions.OperandeTropGrandException;
+import execptions.OperandeTropPetitException;
 
 
 public class MoteurRPNTest {

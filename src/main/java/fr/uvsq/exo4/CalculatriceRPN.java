@@ -1,9 +1,9 @@
 package fr.uvsq.exo4;
 
-import Execptions.DivisionParZeroException;
-import Execptions.OperandeManquantException;
-import Execptions.OperandeTropGrandException;
-import Execptions.OperandeTropPetitException;
+import execptions.DivisionParZeroException;
+import execptions.OperandeManquantException;
+import execptions.OperandeTropGrandException;
+import execptions.OperandeTropPetitException;
 /**
  * 
  * @author yasmine

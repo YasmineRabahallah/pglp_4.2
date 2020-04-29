@@ -1,15 +1,19 @@
-package Execptions;
+package execptions;
 
-public class DivisionParZeroException extends Exception  {
-	
-	
-	
-	/**
-	 * Exception  Division Par Zero
-	 */
+/**
+ * class DivisionParZeroException.
+ * @author rabahallah yasmine.
+ *
+ */
 
-	public DivisionParZeroException(){
-		super ("Impossible de diviser par zero ");
-	}
+public class DivisionParZeroException extends Exception {
+
+  /**
+   * Exception  Division Par Zero.
+   */
+
+  public DivisionParZeroException() {
+    super("Impossible de diviser par zero ");
+  }
 
 }

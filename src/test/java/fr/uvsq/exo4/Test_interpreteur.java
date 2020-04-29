@@ -9,7 +9,7 @@ import java.util.Stack;
 
 import org.junit.Test;
 
-import Execptions.OperandeManquantException;
+import execptions.OperandeManquantException;
 
 
 public class Test_interpreteur {
