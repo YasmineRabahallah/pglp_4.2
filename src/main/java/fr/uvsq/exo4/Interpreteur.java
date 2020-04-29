@@ -1,9 +1,10 @@
 package fr.uvsq.exo4;
 
-import execptions.OperandeManquantException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Stack;
+
+import Execptions.OperandeManquantException;
 
 
 /**

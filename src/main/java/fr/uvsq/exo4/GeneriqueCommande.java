@@ -1,6 +1,6 @@
 package fr.uvsq.exo4;
 
-import execptions.OperandeManquantException;
+import Execptions.OperandeManquantException;
 
 /**
  * interface GeneriqueCommande.

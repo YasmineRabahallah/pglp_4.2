@@ -6,16 +6,16 @@ import java.util.Stack;
 
 import org.junit.Test;
 
-import execptions.DivisionParZeroException;
-import execptions.OperandeManquantException;
-import execptions.OperandeTropGrandException;
-import execptions.OperandeTropPetitException;
+import Execptions.DivisionParZeroException;
+import Execptions.OperandeManquantException;
+import Execptions.OperandeTropGrandException;
+import Execptions.OperandeTropPetitException;
 
 
 public class MoteurRPNTest {
 	private Stack<Double> s = new Stack<Double>();
 	private Stack<Double> h = new Stack<Double>();
-	MoteurRpn m = new MoteurRpn(s,h);
+	MoteurRPN m = new MoteurRPN(s,h);
 	@Test
 	public void testinterpreteur1() {
 		

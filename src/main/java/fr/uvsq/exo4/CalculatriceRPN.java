@@ -1,9 +1,9 @@
 package fr.uvsq.exo4;
 
-import execptions.DivisionParZeroException;
-import execptions.OperandeManquantException;
-import execptions.OperandeTropGrandException;
-import execptions.OperandeTropPetitException;
+import Execptions.DivisionParZeroException;
+import Execptions.OperandeManquantException;
+import Execptions.OperandeTropGrandException;
+import Execptions.OperandeTropPetitException;
 
 /**
  * enumeration CalculatriceRPN.
@@ -11,16 +11,16 @@ import execptions.OperandeTropPetitException;
  *
  */
 
-public enum CalculatriceRpn {
-  CALCULATRICE(new SaisieRpn());
+public enum CalculatriceRPN {
+  CALCULATRICE(new SaisieRPN());
 
   /**
    * saisierpn.
    */
 
-  private SaisieRpn saisierpn;
+  private SaisieRPN saisierpn;
 
-  CalculatriceRpn(SaisieRpn saisie) {
+  CalculatriceRPN(SaisieRPN saisie) {
     saisierpn = saisie;
   }
 
@@ -39,6 +39,6 @@ public enum CalculatriceRpn {
 
   public static void main(String[] args) throws OperandeTropGrandException, 
       OperandeTropPetitException,OperandeManquantException, DivisionParZeroException {
-    CalculatriceRpn.CALCULATRICE.traite();
+    CalculatriceRPN.CALCULATRICE.traite();
   }
 }

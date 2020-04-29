@@ -1,6 +1,6 @@
 package fr.uvsq.exo4;
 
-import execptions.DivisionParZeroException;
+import Execptions.DivisionParZeroException;
 
 /**
  * interface SpecifiqueCommande.

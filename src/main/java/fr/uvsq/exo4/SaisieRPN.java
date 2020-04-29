@@ -1,11 +1,12 @@
 package fr.uvsq.exo4;
 
-import execptions.DivisionParZeroException;
-import execptions.OperandeManquantException;
-import execptions.OperandeTropGrandException;
-import execptions.OperandeTropPetitException;
 import java.util.Scanner;
 import java.util.Stack;
+
+import Execptions.DivisionParZeroException;
+import Execptions.OperandeManquantException;
+import Execptions.OperandeTropGrandException;
+import Execptions.OperandeTropPetitException;
 
 /**
  * class SaisieRpn. 
@@ -13,20 +14,20 @@ import java.util.Stack;
  *
  */
 
-public class SaisieRpn {
+public class SaisieRPN {
 
   private Stack<Double> stockage;
   private Stack<Double> historique;
-  private MoteurRpn monMoteurrpn;
+  private MoteurRPN monMoteurrpn;
 
   /**
    * constructeur SaisieRpn.
    */
 
-  public SaisieRpn() {
+  public SaisieRPN() {
     this.historique = new Stack<Double>();
     this.stockage = new Stack<Double>();
-    this.monMoteurrpn = new MoteurRpn(stockage,historique);
+    this.monMoteurrpn = new MoteurRPN(stockage,historique);
   }
 
   /**

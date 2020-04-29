@@ -1,12 +1,13 @@
 package fr.uvsq.exo4;
 
-import execptions.DivisionParZeroException;
-import execptions.OperandeManquantException;
-import execptions.OperandeTropGrandException;
-import execptions.OperandeTropPetitException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Stack;
+
+import Execptions.DivisionParZeroException;
+import Execptions.OperandeManquantException;
+import Execptions.OperandeTropGrandException;
+import Execptions.OperandeTropPetitException;
 
 
 /**
@@ -15,7 +16,7 @@ import java.util.Stack;
  *
  */
 
-public class MoteurRpn extends Interpreteur {
+public class MoteurRPN extends Interpreteur {
   public static  final double MAX_VALUE = 7000000;
   public  static final double MIN_VALUE = 0;
   private Stack<Double> stockage;
@@ -27,7 +28,7 @@ public class MoteurRpn extends Interpreteur {
    * @param stockage pile de stockage .
    * @param historique pile d'historique.
    */
-  public MoteurRpn(final Stack<Double> stockage,final Stack<Double> historique) {
+  public MoteurRPN(final Stack<Double> stockage,final Stack<Double> historique) {
     super(stockage, historique);
     this.commandes = new HashMap<String,SpecifiqueCommande>();
     commandes.put("+", new Addition());
